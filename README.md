@@ -1,57 +1,105 @@
-# projeto-RL-MODA-MASCULINA
-# RL — Loja de Moda Masculina (Projeto HTML + CSS)
+# R L Moda Masculina
 
-## Finalidade
+Landing page institucional e comercial para a **R L Moda Masculina**, uma marca de roupas masculinas de grife. O projeto foi pensado para apresentar a curadoria da loja, transmitir exclusividade e incentivar o visitante a entrar em contato com um consultor.
 
-Este projeto foi criado como exercício da disciplina de Ciências da Computação (2º semestre), com o objetivo de praticar **HTML semântico** e **CSS puro** (sem frameworks) construindo a página inicial de uma loja de moda masculina de luxo, a partir de três telas de referência fornecidas em imagem.
+ Objetivo
 
-A ideia foi reproduzir fielmente a estrutura e o conteúdo das telas — cabeçalho, vitrine de produtos, seção de produto em destaque e opções de entrega — aplicando um sistema de design consistente (cores, tipografia e espaçamento) em vez de copiar estilos aleatórios.
+A página combina divulgação da marca, apresentação de produtos e captação de contatos. O visitante pode:
 
-## Arquivos do projeto
+- Conhecer a proposta e os diferenciais da R L.
+- Explorar uma seleção de produtos com imagens, descrições e preços.
+- Favoritar produtos visualmente.
+- Tirar dúvidas pelo FAQ expansível.
+- Abrir conversas pelo WhatsApp, visitar o Instagram ou enviar um e-mail.
+- Preencher um formulário de contato com validação dos campos.
 
+ Tecnologias
+
+- **HTML5:** estrutura semântica, acessível e otimizada para SEO básico.
+- **CSS3:** identidade visual, layout responsivo, estados de foco, hover e animações de entrada.
+- **JavaScript:** menu mobile, favoritos, preenchimento automático do produto no formulário e validação do contato.
+- **Google Fonts:** fontes Manrope e DM Sans, escolhidas para criar contraste entre títulos editoriais e textos de leitura.
+- **Imagens do Unsplash:** imagens remotas usadas como referência visual para a coleção e para a atmosfera premium da marca.
+
+Não foi usada nenhuma biblioteca JavaScript ou framework. Isso mantém o carregamento simples e permite abrir o projeto diretamente no navegador.
+
+ Estrutura de arquivos
+
+```text
+projeto-RL/
+├── index.html   # Conteúdo e estrutura semântica da página
+├── style.css    # Identidade visual e responsividade
+├── script.js    # Interações e validações
+└── README.md    # Documentação do projeto
 ```
-site/
-├── index.html   → estrutura e conteúdo da página
-├── style.css    → toda a estilização visual
-└── README.md    → este documento
-```
 
-## Passo a passo do que foi feito
+ Como a página foi criada
 
-### 1. Planejamento visual
-Antes de escrever código, defini um pequeno sistema de design baseado nas telas de referência:
-- **Cores**: preto (`#0c0c0d`) como base, marfim (`#f4f2ee`) para texto, dourado (`#c9a24b`) como cor de destaque (badges, preços, botão), vermelho para promoções e verde para frete grátis/desconto.
-- **Tipografia**: `Cormorant Garamond` (serifada) para logo e títulos, transmitindo a ideia de "grife"; `Inter` (sans-serif) para textos de apoio, por ser mais legível em telas.
-- **Layout**: cabeçalho fixo no topo, grade de produtos em cartões, seção de destaque em duas colunas (imagem + informações).
+ 1. Estrutura e conteúdo
 
-### 2. Estrutura do HTML (`index.html`)
-O arquivo foi dividido em blocos semânticos:
+O `index.html` foi dividido em seções com HTML semântico:
 
-- **`<header class="topbar">`** — logo (SVG de uma coroa + sigla "RL"), menu de navegação (`<nav>`), ícones de favoritos/carrinho e a barra de benefícios (frete grátis, troca em 30 dias, pagamento seguro, envio imediato).
-- **`<main>`** — contém duas seções de vitrine (`<section class="grid">`), cada uma com quatro `<article class="card">` representando um produto (imagem, badge, nome, marca, descrição e preço), reproduzindo os cards das imagens 1 e 2.
-- **Seção "Peça da Semana"** — bloco especial com imagem grande do produto, descrição, aviso de estoque limitado, preço com desconto e botão de call-to-action ("RESERVAR"), seguido da grade de opções de entrega (PAC, SEDEX, SEDEX 1 dia e Frete Premium), reproduzindo a imagem 3.
-- **`<footer>`** — ícones de redes sociais e informação de copyright.
+- Header com logo, navegação e CTA.
+- Hero com proposta de valor e chamadas principais.
+- Benefícios da experiência R L.
+- Catálogo com quatro produtos.
+- Seção institucional sobre a marca.
+- Depoimentos de clientes.
+- FAQ com perguntas expansíveis usando o elemento nativo `details`.
+- CTA final com canais de contato e formulário.
+- Footer com links e informações da empresa.
 
-Cada card de produto segue o mesmo padrão de marcação (imagem, badge opcional, título, marca, descrição, preço e botão "+"), o que facilita duplicar ou editar produtos no futuro.
+Os textos foram escritos especificamente para o segmento de moda masculina premium, evitando conteúdo genérico. As imagens têm `alt` descritivo e carregamento `lazy` nas seções abaixo do hero.
 
-### 3. Estilização com CSS (`style.css`)
-O CSS foi organizado por blocos, na mesma ordem do HTML:
+ 2. Direção visual
 
-1. **Variáveis (`:root`)** — todas as cores e o raio de borda ficam centralizados em `custom properties`, facilitando trocar a paleta inteira alterando só um lugar.
-2. **Reset básico** — `box-sizing: border-box` e remoção de estilos padrão de links.
-3. **Cabeçalho (`.topbar`)** — `flexbox` para alinhar logo, menu e ícones lado a lado; `position: sticky` para o cabeçalho acompanhar a rolagem.
-4. **Grade de produtos (`.grid` / `.card`)** — `CSS Grid` com 4 colunas, usando `gap` para criar as linhas divisórias entre os cards (efeito de "vitrine" com bordas finas).
-5. **Seção "Peça da Semana"** — `grid-template-columns: 1fr 1fr` para dividir imagem e texto; cards de entrega em uma segunda grade menor.
-6. **Rodapé** — ícones circulares centralizados com `flexbox`.
-7. **Responsividade (`@media`)** — em telas médias o menu vira ícone de hambúrguer e a grade passa para 2 colunas; em telas pequenas, para 1 coluna.
+A interface usa preto e grafite como base, prata para textos secundários e dourado para destacar CTAs, números e detalhes de marca. Azul-petróleo e verde aparecem nos elementos de suporte, como o link de WhatsApp e os indicadores do FAQ.
 
-### 4. Substituição de imagens
-As imagens dos produtos usam URLs de banco de imagens gratuito (Unsplash) apenas como **placeholder**, já que não havia fotos reais dos produtos. Para usar em produção, basta trocar o valor de `background-image` em cada `.card__img` pelo link (ou caminho local) da foto real.
+O layout foi construído com CSS Grid e Flexbox. Os espaçamentos, tamanhos de tipografia e colunas se adaptam em uma quebra principal para telas menores. A composição prioriza bastante espaço, contraste e imagens grandes para transmitir uma experiência editorial e sofisticada.
 
-## Como visualizar
-Basta abrir o arquivo `index.html` em qualquer navegador — ele já está ligado ao `style.css` pela tag `<link>` no `<head>`.
+ 3. Interações
 
-## Possíveis próximos passos
-- Trocar as imagens placeholder por fotos reais dos produtos.
-- Adicionar interatividade com JavaScript (ex.: abrir o menu mobile, atualizar contador do carrinho).
-- Criar páginas internas (produto, carrinho, checkout) linkadas ao menu.
+O `script.js` implementa:
+
+- Abertura e fechamento do menu mobile, atualizando `aria-expanded` e o rótulo do botão.
+- Fechamento automático do menu ao selecionar uma seção.
+- Favoritos nos cards de produtos, com atualização visual e de `aria-pressed`.
+- Preenchimento do campo de mensagem ao clicar em “Tenho interesse” em um produto.
+- Validação nativa do formulário e mensagem de feedback após o envio.
+- Scroll suave para as âncoras internas por meio de CSS.
+
+O formulário funciona como uma demonstração front-end: ele valida e exibe o retorno na própria página, mas ainda não envia dados para um servidor ou CRM.
+
+ Como executar
+
+1. Abra a pasta do projeto.
+2. Abra o arquivo `index.html` em qualquer navegador moderno.
+3. Teste a navegação, o menu mobile, o FAQ, os favoritos e o formulário.
+
+Também é possível usar uma extensão como **Live Server** no VS Code para atualizar a página automaticamente durante a edição.
+
+ Personalização antes da publicação
+
+Os dados de contato usados no protótipo são fictícios e devem ser substituídos em `index.html`:
+
+- WhatsApp: `+55 31 99999-9999`
+- Instagram: `@rlmodamasculina`
+- E-mail: `contato@rlmodamasculina.com.br`
+- Localização: `Belo Horizonte · MG`
+
+Os links aparecem no header, FAQ, CTA final, botão flutuante e footer. Para transformar o formulário em captação real, conecte o evento de envio a uma API, serviço de e-mail ou CRM.
+
+ Acessibilidade e SEO
+
+- `lang="pt-BR"`, `title` e `meta description` configurados.
+- Hierarquia de títulos com `h1`, `h2` e `h3`.
+- Navegação e regiões principais identificadas com HTML semântico e labels ARIA.
+- Campos do formulário associados a `label`.
+- Estados visíveis de foco via `:focus-visible`.
+- Contraste alto na maior parte da interface.
+- Textos alternativos nas imagens.
+- Navegação por teclado preservada nos links, botões e FAQ.
+
+ Observações
+
+As imagens são carregadas do Unsplash e exigem conexão com a internet. Para publicar com independência externa, baixe imagens autorizadas da marca e substitua as URLs dos atributos `src` no `index.html`.

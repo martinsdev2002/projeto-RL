@@ -1,13 +1,17 @@
 :root {
-  --ink: #071719;
-  --charcoal: #0d2b2f;
-  --silver: #c8d9d5;
-  --mist: #edf7f2;
-  --paper: #f5faf6;
-  --gold: #e8bb4e;
-  --blue: #1596a1;
-  --green: #37b87f;
-  --line: rgba(200, 217, 213, .3);
+  --ink: #111827;
+  --charcoal: #1e293b;
+  --silver: #64748b;
+  --mist: #fffaf3;
+  --paper: #fffaf5;
+  --gold: #d99a32;
+  --blue: #2456c4;
+  --green: #2d9b72;
+  --coral: #ef6f61;
+  --line: rgba(100, 116, 139, .28);
+  --color-ink: #111827;
+  --color-surface: #fffaf5;
+  --color-border: rgba(100, 116, 139, .28);
 }
 
 .skip-link {
@@ -80,12 +84,12 @@ p {
 }
 
 .site-header {
-  background: rgba(7, 23, 25, .97);
-  box-shadow: 0 4px 24px rgba(7, 23, 25, .2);
+  background: rgba(17, 24, 39, .97);
+  box-shadow: 0 4px 24px rgba(17, 24, 39, .2);
 }
 
 .hero {
-  background-image: linear-gradient(90deg, rgba(4, 19, 21, .95), rgba(9, 54, 58, .58) 52%, rgba(9, 54, 58, .12)), url('https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=2000&q=90');
+  background-image: linear-gradient(90deg, rgba(17, 24, 39, .94), rgba(30, 41, 59, .68) 52%, rgba(30, 41, 59, .12)), url('https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=2000&q=90');
 }
 
 .hero h1 em,
@@ -94,18 +98,19 @@ p {
 .essence-copy h2 em,
 .faq h2 em,
 .cta-grid h2 em {
-  color: var(--gold);
-  text-shadow: 0 0 28px rgba(232, 187, 78, .16);
+  color: var(--coral);
+  text-shadow: 0 0 28px rgba(239, 111, 97, .18);
 }
 
 .button-gold {
-  background: var(--gold);
-  box-shadow: 0 10px 28px rgba(232, 187, 78, .2);
+  background: var(--coral);
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(239, 111, 97, .25);
 }
 
 .button-gold:hover {
-  background: #f4ce6d;
-  box-shadow: 0 14px 34px rgba(232, 187, 78, .32);
+  background: #db584e;
+  box-shadow: 0 14px 34px rgba(239, 111, 97, .34);
 }
 
 .benefit,
@@ -118,11 +123,15 @@ p {
 .eyebrow,
 .rating,
 .footer-bottom a {
-  color: var(--gold);
+  color: var(--coral);
 }
 
 .product-card {
   transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.collection {
+  background: var(--paper);
 }
 
 .product-card:hover {
@@ -131,36 +140,36 @@ p {
 }
 
 .product-tag {
-  background: var(--green);
-  color: #062119;
+  background: var(--gold);
+  color: #211406;
 }
 
 .product-link:hover,
 .text-link:hover {
-  color: var(--blue);
+  color: var(--coral);
 }
 
 .essence {
-  background: linear-gradient(135deg, #0d2b2f, #071719);
+  background: linear-gradient(135deg, #1e293b, #111827);
 }
 
 .faq {
-  background: #dff1e9;
+  background: #fff0e8;
 }
 
 .accordion summary span {
-  color: var(--blue);
+  color: var(--coral);
 }
 
 .contact-form {
-  background: rgba(13, 43, 47, .35);
-  border-color: rgba(55, 184, 127, .45);
+  background: rgba(30, 41, 59, .55);
+  border-color: rgba(239, 111, 97, .5);
   box-shadow: 0 18px 50px rgba(0, 0, 0, .16);
 }
 
 .whatsapp-float {
   background: var(--green);
-  color: #062119;
+  color: #fff;
 }
 
 @media (max-width: 760px) {
@@ -184,8 +193,8 @@ p {
   }
 
   .main-nav {
-    background: #071719;
-    box-shadow: 0 16px 28px rgba(7, 23, 25, .3);
+    background: #111827;
+    box-shadow: 0 16px 28px rgba(17, 24, 39, .3);
   }
 
   .product-card:hover {

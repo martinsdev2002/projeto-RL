@@ -29,46 +29,10 @@ Não foi usada nenhuma biblioteca JavaScript ou framework. Isso mantém o carreg
 projeto-RL/
 ├── index.html   # Conteúdo e estrutura semântica da página
 ├── style.css    # Identidade visual e responsividade
+├── vivid.css    # Ajustes visuais, cores e tipografia
 ├── script.js    # Interações e validações
 └── README.md    # Documentação do projeto
 ```
-
- Como a página foi criada
-
- 1. Estrutura e conteúdo
-
-O `index.html` foi dividido em seções com HTML semântico:
-
-- Header com logo, navegação e CTA.
-- Hero com proposta de valor e chamadas principais.
-- Benefícios da experiência R L.
-- Catálogo com quatro produtos.
-- Seção institucional sobre a marca.
-- Depoimentos de clientes.
-- FAQ com perguntas expansíveis usando o elemento nativo `details`.
-- CTA final com canais de contato e formulário.
-- Footer com links e informações da empresa.
-
-Os textos foram escritos especificamente para o segmento de moda masculina premium, evitando conteúdo genérico. As imagens têm `alt` descritivo e carregamento `lazy` nas seções abaixo do hero.
-
- 2. Direção visual
-
-A interface usa preto e grafite como base, prata para textos secundários e dourado para destacar CTAs, números e detalhes de marca. Azul-petróleo e verde aparecem nos elementos de suporte, como o link de WhatsApp e os indicadores do FAQ.
-
-O layout foi construído com CSS Grid e Flexbox. Os espaçamentos, tamanhos de tipografia e colunas se adaptam em uma quebra principal para telas menores. A composição prioriza bastante espaço, contraste e imagens grandes para transmitir uma experiência editorial e sofisticada.
-
- 3. Interações
-
-O `script.js` implementa:
-
-- Abertura e fechamento do menu mobile, atualizando `aria-expanded` e o rótulo do botão.
-- Fechamento automático do menu ao selecionar uma seção.
-- Favoritos nos cards de produtos, com atualização visual e de `aria-pressed`.
-- Preenchimento do campo de mensagem ao clicar em “Tenho interesse” em um produto.
-- Validação nativa do formulário e mensagem de feedback após o envio.
-- Scroll suave para as âncoras internas por meio de CSS.
-
-O formulário funciona como uma demonstração front-end: ele valida e exibe o retorno na própria página, mas ainda não envia dados para um servidor ou CRM.
 
  Como executar
 

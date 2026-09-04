@@ -1,0 +1,342 @@
+:root{
+    --black: #0c0c0d;
+    --black-soft: #141416;
+    --ivory: #f4f2ee;
+    --stone: #b9b3a6;
+    --stone-line: #3a3a3d;
+    --gold: #c9a24b;
+    --red: #b53d33;
+    --green: #4c8c5a;
+    --card-from: #e9e6df;
+    --card-to: #ffffff;
+    --radius: 2px;
+  }
+  
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  
+  body{
+    margin:0;
+    background:var(--black);
+    color:var(--ivory);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  
+  h1,h2,h3,.logo__mark,.card__title{
+    font-family:'Cormorant Garamond', Georgia, serif;
+  }
+  
+  a{color:inherit; text-decoration:none;}
+  
+  .dot{
+    display:inline-block;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--stone);
+    margin-right:8px;
+    vertical-align:middle;
+  }
+  
+  /* ---------- Topbar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:var(--black);
+    border-bottom:1px solid var(--stone-line);
+  }
+  .topbar__inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    gap:32px;
+    padding:18px 24px;
+  }
+  .menu-toggle{
+    display:none;
+    flex-direction:column;
+    gap:4px;
+    background:none;
+    border:none;
+    cursor:pointer;
+  }
+  .menu-toggle span{
+    width:20px; height:1.5px; background:var(--ivory);
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:1.6rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+  }
+  .logo__crown{ width:22px; height:16px; color:var(--gold); }
+  
+  .nav{
+    display:flex;
+    gap:28px;
+    flex:1;
+  }
+  .nav a{
+    font-size:0.92rem;
+    color:var(--ivory);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .nav a:hover{ color:var(--gold); border-color:var(--gold); }
+  
+  .topbar__icons{ display:flex; gap:16px; }
+  .icon-btn{
+    background:none; border:none; color:var(--ivory);
+    font-size:1.15rem; cursor:pointer; line-height:1;
+  }
+  
+  .perks{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    justify-content:center;
+    padding:10px 24px;
+    border-top:1px solid var(--stone-line);
+    font-size:0.85rem;
+    color:var(--stone);
+  }
+  .perks strong{ color:var(--ivory); font-weight:600; }
+  .accent-green{ color:var(--green) !important; }
+  
+  /* ---------- Sections ---------- */
+  main{ max-width:1200px; margin:0 auto; padding:0 24px; }
+  .section{ padding:48px 0; }
+  .section--tight{ padding-top:0; }
+  
+  .section__head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:22px;
+  }
+  .section__head h2{
+    font-size:1.9rem;
+    font-weight:600;
+    margin:0;
+  }
+  .ver-todos{
+    font-size:0.85rem;
+    color:var(--stone);
+    border-bottom:1px solid var(--stone-line);
+  }
+  .ver-todos:hover{ color:var(--gold); border-color:var(--gold); }
+  
+  /* ---------- Product grid / cards ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--stone-line);
+    border:1px solid var(--stone-line);
+  }
+  .card{
+    position:relative;
+    background:var(--black-soft);
+    display:flex;
+    flex-direction:column;
+  }
+  .card__badge{
+    position:absolute;
+    top:14px; left:14px;
+    z-index:2;
+    font-size:0.7rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    padding:4px 10px;
+    color:var(--black);
+    background:var(--gold);
+  }
+  .badge--sale{ background:var(--red); color:var(--ivory); }
+  .badge--tag{ background:var(--ivory); }
+  
+  .card__img{
+    height:230px;
+    background-color:var(--card-from);
+    background-image:linear-gradient(160deg, var(--card-from), var(--card-to));
+    background-size:cover;
+    background-position:center;
+  }
+  
+  .card__body{
+    padding:16px 18px 18px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .card__title{
+    font-size:1.15rem;
+    font-weight:600;
+    margin:0 0 2px;
+    color:var(--ivory);
+  }
+  .card__title.accent{ color:var(--gold); margin-bottom:0; }
+  .card__brand{
+    font-size:0.85rem;
+    color:var(--gold);
+    margin:0 0 8px;
+  }
+  .card__desc{
+    font-size:0.82rem;
+    color:var(--stone);
+    line-height:1.5;
+    margin:0 0 16px;
+    flex:1;
+  }
+  .card__foot{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:auto;
+  }
+  .price{
+    font-size:1rem;
+    font-weight:600;
+    color:var(--ivory);
+  }
+  .price small{ font-weight:400; font-size:0.7em; color:var(--stone); }
+  .price--old{
+    font-size:0.82rem;
+    color:var(--stone);
+    text-decoration:line-through;
+    font-weight:400;
+  }
+  .add-btn{
+    margin-left:auto;
+    width:32px; height:32px;
+    border:1px solid var(--stone-line);
+    background:transparent;
+    color:var(--ivory);
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .add-btn:hover{ background:var(--gold); border-color:var(--gold); color:var(--black); }
+  
+  /* ---------- Peça da semana ---------- */
+  .peca-semana{
+    border-top:1px solid var(--stone-line);
+    padding-top:44px;
+  }
+  .peca-semana__eyebrow{
+    font-size:0.95rem;
+    color:var(--stone);
+    margin:0 0 24px;
+  }
+  .peca-semana__content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    align-items:center;
+  }
+  .peca-semana__img{
+    height:320px;
+    background-color:var(--card-from);
+    background-image:linear-gradient(160deg, var(--card-from), var(--card-to));
+    background-size:cover;
+    background-position:center;
+  }
+  .peca-semana__info h3{
+    font-size:2rem;
+    font-weight:600;
+    margin:0 0 14px;
+  }
+  .peca-semana__desc{
+    color:var(--stone);
+    line-height:1.6;
+    font-size:0.95rem;
+    margin:0 0 14px;
+  }
+  .peca-semana__stock{
+    color:var(--red);
+    font-size:0.88rem;
+    font-weight:600;
+    margin:0 0 20px;
+  }
+  .peca-semana__price{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:24px;
+  }
+  .peca-semana__price .price{ font-size:1.4rem; }
+  .off{
+    font-size:0.8rem;
+    font-weight:700;
+    color:var(--green);
+  }
+  .cta{
+    background:var(--gold);
+    color:var(--black);
+    border:none;
+    padding:14px 30px;
+    font-size:0.9rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    cursor:pointer;
+    transition:opacity .2s ease;
+  }
+  .cta:hover{ opacity:0.85; }
+  
+  .entrega{ margin-top:52px; }
+  .entrega__title{
+    font-size:0.95rem;
+    color:var(--stone);
+    margin:0 0 18px;
+  }
+  .entrega__grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+  }
+  .entrega__card{
+    background:var(--card-from);
+    background-image:linear-gradient(160deg, var(--card-from), var(--card-to));
+    color:var(--black);
+    padding:18px 22px;
+    border-radius:14px;
+  }
+  .entrega__nome{ font-weight:700; margin:0 0 4px; }
+  .entrega__prazo{ font-size:0.85rem; color:#5c5850; margin:0 0 6px; }
+  .entrega__valor{ font-weight:700; margin:0; }
+  .entrega__valor--free{ color:var(--green); }
+  
+  /* ---------- Footer ---------- */
+  .footer{
+    border-top:1px solid var(--stone-line);
+    padding:28px 24px 40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+  }
+  .footer__social{ display:flex; gap:16px; }
+  .footer__social a{
+    width:34px; height:34px;
+    border:1px solid var(--stone-line);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.95rem;
+  }
+  .footer__social a:hover{ border-color:var(--gold); color:var(--gold); }
+  .footer__copy{ font-size:0.8rem; color:var(--stone); margin:0; }
+  
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px){
+    .nav{ display:none; }
+    .menu-toggle{ display:flex; }
+    .grid{ grid-template-columns:repeat(2, 1fr); }
+    .peca-semana__content{ grid-template-columns:1fr; }
+    .entrega__grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width: 520px){
+    .grid{ grid-template-columns:1fr; }
+    .perks{ gap:14px; justify-content:flex-start; }
+  }
